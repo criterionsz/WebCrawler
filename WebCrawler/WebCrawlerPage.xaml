@@ -1,0 +1,48 @@
+﻿<Page x:Class="WebCrawler.WebCrawlerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+      mc:Ignorable="d" 
+      d:DesignHeight="300"
+	Title="WebCrawlerPage" Width="453.731">
+
+
+    <Grid>
+
+        <StackPanel >
+            
+            <Label Content="Enter url for spider" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            <Border x:Name="border" BorderThickness="1" MaxWidth="250" MinWidth="150" Style="{DynamicResource CtrTem}"  Margin="10,10,0,0">
+                <TextBox x:Name="firstNameTxtBox_Copy" BorderBrush="#FFE2E2E2" Style="{DynamicResource TextBoxStyle1}" Margin="0,0,0,0"/>
+            </Border>
+
+
+            <Button Content="Go" Background="White"  HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="87" Height="29" Click="Button_Click"   Grid.Row="1"/>
+
+            <Border x:Name="border2" BorderThickness="1" MaxWidth="250" MinWidth="150" Style="{DynamicResource CtrTem}"  Margin="10,10,0,0">
+                <TextBox x:Name="firstNameTxtBox_Copy2" BorderBrush="#FFE2E2E2" Style="{DynamicResource TextBoxStyle1}" Margin="0,0,0,0" TextChanged="firstNameTxtBox_Copy2_TextChanged"/>
+            </Border>
+
+            <Button Content="Переиндексация" Background="White"  HorizontalAlignment="Center" Margin="184,10,172,0" VerticalAlignment="Top" Width="98" Height="29" Click="Button_Click2"   Grid.Row="1"/>
+            <DataGrid x:Name="gridProducts" Margin="11" AutoGenerateColumns="True"  >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№" Width="40"  Binding="{Binding numberCol}"/>
+                    <DataGridTextColumn Header="URL" Binding="{Binding urlCol}"/>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <Image x:Name="img" 
+                   Width="64"
+                  Height="64"
+                   VerticalAlignment="Bottom"
+                     Margin="0,0,0,0"
+       HorizontalAlignment="Center"
+                   gif:AnimationBehavior.SourceUri="loading.gif" />
+        </StackPanel>
+
+    </Grid>
+
+</Page>
